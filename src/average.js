@@ -11,7 +11,7 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const verificaNumero = (arrayNumero) => {
+/* const verificaNumero = (arrayNumero) => {
    for (let index = 0; index < arrayNumero.length; index += 1) {
     if (typeof arrayNumero[index] !== 'number' || arrayNumero.length === 0) {
            throw new Error('undefined');
@@ -30,8 +30,38 @@ const average = (arrayNumero) => {
   }
   return Math.round(media);
   } catch (error) {
-    throw error.message;
+  throw error.message;
   }
+}; */
+
+/* const verificaNumero = (arrayNumero) => {
+  for (let index = 0; index < arrayNumero.length; index += 1) {
+    if ((arrayNumero.length === 0) || (typeof arrayNumero[index] !== 'number')) {
+      return 'undefined';
+    }
+  }
+  return arrayNumero;
 };
 
-module.exports = average;
+console.log(verificaNumero([])); 
+console.log(verificaNumero([1, 2, '3'])); */
+
+ const average = (arrayNumero) => {
+  let soma = 0;
+  let media = 0;
+  if (arrayNumero.length === 0) {
+       return undefined;
+     } 
+     for (let index = 0; index < arrayNumero.length; index += 1) {
+          if (typeof arrayNumero[index] !== 'number') {
+       return undefined;
+     }
+   soma += arrayNumero[index];
+   media = soma / arrayNumero.length;
+ }
+ return Math.round(media);
+};
+console.log(average([]));
+console.log(average([1, 2, '3']));
+console.log(average([1, 2, 3, 4, 5])); 
+ module.exports = average;
