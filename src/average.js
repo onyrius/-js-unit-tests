@@ -11,9 +11,27 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+const verificaNumero = (arrayNumero) => {
+   for (let index = 0; index < arrayNumero.length; index += 1) {
+    if (typeof arrayNumero[index] !== 'number' || arrayNumero.length === 0) {
+           throw new Error('undefined');
+    }
+  }
+};
 
 const average = (arrayNumero) => {
-  
+  let soma = 0;
+  let media = 0;
+  try {
+    verificaNumero(arrayNumero);
+  for (let index = 0; index < arrayNumero.length; index += 1) {
+    soma += arrayNumero[index];
+    media = soma / arrayNumero.length;
+  }
+  return Math.round(media);
+  } catch (error) {
+    throw error.message;
+  }
 };
 
 module.exports = average;
