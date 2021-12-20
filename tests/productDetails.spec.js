@@ -41,6 +41,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect (typeof productDetails).toBe('function')
   });
   it('Verifica se o retorno da funçao "productDetails" è um array', () => {
-
+    expect(true).toBe(Array.isArray(productDetails()))
+  })
+  it('Verifica se productDetails contem 2 itens dentro', () => {
+    const verificaProduct = productDetails()
+    expect (Object.entries(verificaProduct).length).toBe(2);
+  })
+  it('verifica se os dois intens dentro do array retornado pela funçao sao objetos', () => {
+    expect (typeof Object.entries(productDetails)).toBe('object')
   })
 });
