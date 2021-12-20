@@ -14,10 +14,11 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-let goodPerson = () => 'Eita pessoa boa';
+let goodPerson = () => 'Eita pessoa boa!';
 // eslint-disable-next-line no-sequences
 const createStudent = (nome) => { 
-  const student = { nome, feedback: goodPerson }; 
+  const student = { name: nome, feedback: goodPerson }; 
+  return student;
 };
 
 module.exports = createStudent;
