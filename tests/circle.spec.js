@@ -47,4 +47,17 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
       area: PI * radius * radius,
       circumference: 2 * PI * radius,});
   })
+  it (`Verifica se a funçao circle retorna objeto`, () => {
+    const circulo = circle (1)
+    expect (typeof circulo).toBe('object')
+  });
+  it (`Verifica se a funçao circle retorna objetos com 3 entradas`, () => {
+    expect (Object.entries(circle(1)).length).toStrictEqual(3);
+  });
+  it (`Verifica se a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2`, () => {
+    const circulo = circle(2)
+    let radius = 2
+    const PI = 3.14
+    expect (circulo.circumference = 2 * PI * 2).toStrictEqual(12.56);
+  });
 });
