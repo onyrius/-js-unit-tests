@@ -70,11 +70,10 @@ const calculator = (number1, number2) => {
   return object;
 };
 
-const arrayGenerator = (type, calculator) => { 
-   if (type === 'keys') { return Object.keys(calculator); }
-  if (type === 'values') { return Object.values(calculator); }
-  if (type === 'entries') { return Object.entries(calculator); }
+const arrayGenerator = (type, object) => { 
+   if (type === 'keys') { return Object.keys(object); }
+  if (type === 'values') { return Object.values(object); }
+  if (type === 'entries') { return Object.entries(object); }
 };
 
-console.log(arrayGenerator('entries', calculator(1, 2)));
 module.exports = { calculator, arrayGenerator };
