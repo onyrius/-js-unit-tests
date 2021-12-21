@@ -32,9 +32,49 @@
   arrayGenerator('values', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ 3, 2, 1, 0 ]
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
+const sum = (number1, number2) => {
+  if (typeof number1 === 'number' && typeof number2 === 'number') {
+return number1 + number2;
+  }
+  };
 
-const calculator = (number1, number2) => {};
+ const mult = (number1, number2) => {
+    if (typeof number1 === 'number' && typeof number2 === 'number') {
+  return number1 * number2;
+    }
+    };
 
-const arrayGenerator = (type, object) => {};
+const div = (number1, number2) => {
+      if (typeof number1 === 'number' && typeof number2 === 'number') {
+    return parseInt(number1 / number2, 10);
+      }
+      };
 
+const sub = (number1, number2) => {
+   if (typeof number1 === 'number' && typeof number2 === 'number') {
+      return number1 - number2;
+  }
+};
+
+const calculator = (number1, number2) => {
+   let object = {
+     sum,
+     mult,
+     div,
+     sub,
+   };
+  object.sum = sum(number1, number2);
+  object.mult = mult(number1, number2);
+  object.div = div(number1, number2);
+  object.sub = sub(number1, number2);
+  return object;
+};
+
+const arrayGenerator = (type, calculator) => { 
+   if (type === 'keys') { return Object.keys(calculator); }
+  if (type === 'values') { return Object.values(calculator); }
+  if (type === 'entries') { return Object.entries(calculator); }
+};
+
+console.log(arrayGenerator('entries', calculator(1, 2)));
 module.exports = { calculator, arrayGenerator };
