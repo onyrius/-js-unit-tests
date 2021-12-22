@@ -83,22 +83,36 @@
 //--------------------------------------------------------------------------
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-let menu = {
+const menu = {
   food: { coxinha: 3.9, sopa: 9.9 },
   drink: { agua: 3.9, cerveja: 6.9 },
 };
+ 
+let foods = menu.food;
+let drinks = menu.drink;
+let itensMenu = {};
+
 const createMenu = (objetoPassadoPorParametro) => { 
-  let objCreatMenu = {
+ let objCreatMenu = {
  menu,
  fetchMenu: () => objetoPassadoPorParametro,
  consumption: [],
- order: () => {},
+  // TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
+    // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
+    // ao array retornado em `objetoRetornado.consumption`.
+    // ```
+    // const objetoRetornado = createMenu(objetoQualquer);
+    // objetoRetornado.order("coxinha");
+    // objetoRetornado.consumption // Retorno: ["coxinha"]
+    // ```
+    // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
+    // 
+ order: () => { 
+   for (let itemDoPedido of objetoPassadoPorParametro) { if (Object.keys(itemDoPedido) === Object.keys(itensMenu)) { objCreatMenu.consumption.push(Object.keys(itemDoPedido)); } } 
+  },
  pay: () => {},
 };
 return objCreatMenu;
 }; 
-console.log(createMenu({
-  food: { coxinha: 3.90, sanduiche: 9.90 },
-  drinks: { agua: 3.90, cerveja: 6.90 },
-}));
+
 module.exports = createMenu;

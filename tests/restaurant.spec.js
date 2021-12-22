@@ -110,18 +110,29 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
+
+  it (` TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui a chave fetchMenu, a qual tem como valor uma função.`, () => {
+    const objetoRetornado = createMenu(); 
+    if (typeof objetoRetornado === 'object') {
+    expect (typeof objetoRetornado.fetchMenu).toBe('function')
+    }  
+  })
+
   it (' TESTE 4: Verifique se `objetoRetornado.consumption`, após a criação do menu, retorna um array vazio.', () => {
 let objetoCreateMenu;
 const objetoRetornado = createMenu(objetoCreateMenu);
-console.log(createMenu(objetoCreateMenu))
 expect(objetoRetornado.consumption).toStrictEqual([]);
 });
 //------------------------------------------------------------------------------------------
 //TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
-    // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
+    // passando uma string como parâmetro `(como `objetoRetornado.order('coxinha')`)`, tal string é adicionada
     // ao array retornado em `objetoRetornado.consumption`.)
   it ('TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado, tal string è adicionada ao array retornado em `objetoRetornado.consumption.', () => {
-    expect (objetoRetornado.order('coxinha')).toBe(objetoRetornado.consumption('coxinha'))
+    let objetoQualquer = {coxinha: 3.9};
+    console.log(objetoQualquer);
+    const objetoRetornado = createMenu(objetoQualquer);
+      expect (objetoRetornado.order('coxinha')).toBeEqual(objetoRetornado.consumption['coxinha'])
   });
   
 });
+
