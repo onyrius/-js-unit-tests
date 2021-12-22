@@ -110,4 +110,18 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
+  it (' TESTE 4: Verifique se `objetoRetornado.consumption`, após a criação do menu, retorna um array vazio.', () => {
+let objetoCreateMenu;
+const objetoRetornado = createMenu(objetoCreateMenu);
+console.log(createMenu(objetoCreateMenu))
+expect(objetoRetornado.consumption).toBe([]);
+});
+//------------------------------------------------------------------------------------------
+//TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
+    // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
+    // ao array retornado em `objetoRetornado.consumption`.)
+ /*  it ('TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado, tal string è adicionada ao array retornado em `objetoRetornado.consumption.', () => {
+    expect (objetoRetornado.order('coxinha')).toBe(objetoRetornado.consumption('coxinha'))
+  }); */
+  
 });

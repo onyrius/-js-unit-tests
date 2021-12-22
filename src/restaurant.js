@@ -25,7 +25,7 @@
   meuRestaurante.consumption // Retorno: ['coxinha']
 
   meuRestaurante.pay() // Retorno: 3.9
-
+  
   Uma função createMenu retorna um objeto com as seguintes características:
   - Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro. O menu tem sempre duas chaves, `food` e `drink`, no seguinte formato:
 
@@ -78,7 +78,35 @@
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+//--------------------------------------------------------------------------
 
-const createMenu = () => {};
+// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
+let menu = {
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
+};
+const createMenu = (objetoPassadoPorParametro) => { 
+  createMenu.menu;
 
+  createMenu.fetchMenu = () => objetoPassadoPorParametro,
+
+  createMenu.consumption = Object.keys(objetoPassadoPorParametro);
+  
+  let listaDepedidos = Object.keys(objetoPassadoPorParametro);
+  createMenu.order = (listaDepedidos) => {Object.assign(consumption, listaDepedidos)};
+
+/*  createMenu.pay = soma(Object.values(consumption).reduce()) */
+
+}; 
+console.log(createMenu({}));
 module.exports = createMenu;
+
+/* createMenu.order = [];
+ let busca = { fetchMenu: () => objetoPassadoPorParametro };
+ for (let pedido in busca) {
+   for (let item in menu) {
+   if (pedido === item ) {
+    createMenu.order.push(pedido);
+   }
+  }
+  } */
