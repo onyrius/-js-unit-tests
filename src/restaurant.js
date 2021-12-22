@@ -81,7 +81,7 @@
 //--------------------------------------------------------------------------
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-let menu = {
+/* let menu = {
   food: { coxinha: 3.9, sopa: 9.9 },
   drink: { agua: 3.9, cerveja: 6.9 },
 };
@@ -97,9 +97,9 @@ const createMenu = (objetoPassadoPorParametro) => {
 
 /*  createMenu.pay = soma(Object.values(consumption).reduce()) */
 
-}; 
+/* }; 
 console.log(createMenu({}));
-module.exports = createMenu;
+module.exports = createMenu; */
 
 /* createMenu.order = [];
  let busca = { fetchMenu: () => objetoPassadoPorParametro };
