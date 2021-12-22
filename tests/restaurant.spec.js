@@ -46,7 +46,7 @@ const createMenu = require('../src/restaurant');
 
 describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
+    /* fail('Teste vazio!'); */
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui a
     // chave fetchMenu, a qual tem como valor uma função.
     // ```
@@ -114,14 +114,14 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
 let objetoCreateMenu;
 const objetoRetornado = createMenu(objetoCreateMenu);
 console.log(createMenu(objetoCreateMenu))
-expect(objetoRetornado.consumption).toBe([]);
+expect(objetoRetornado.consumption).toStrictEqual([]);
 });
 //------------------------------------------------------------------------------------------
 //TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
     // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
     // ao array retornado em `objetoRetornado.consumption`.)
- /*  it ('TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado, tal string è adicionada ao array retornado em `objetoRetornado.consumption.', () => {
+  it ('TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado, tal string è adicionada ao array retornado em `objetoRetornado.consumption.', () => {
     expect (objetoRetornado.order('coxinha')).toBe(objetoRetornado.consumption('coxinha'))
-  }); */
+  });
   
 });

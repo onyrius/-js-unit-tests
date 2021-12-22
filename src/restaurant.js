@@ -16,7 +16,9 @@
   - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
   Comportamento:
 
-  const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }).
+  const meuRestaurante = createMenu(
+    
+  ).
 
   meuRestaurante.fetchMenu() // Retorno: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
 
@@ -81,32 +83,22 @@
 //--------------------------------------------------------------------------
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-/* let menu = {
+let menu = {
   food: { coxinha: 3.9, sopa: 9.9 },
   drink: { agua: 3.9, cerveja: 6.9 },
 };
 const createMenu = (objetoPassadoPorParametro) => { 
-  createMenu.menu;
-
-  createMenu.fetchMenu = () => objetoPassadoPorParametro,
-
-  createMenu.consumption = Object.keys(objetoPassadoPorParametro);
-  
-  let listaDepedidos = Object.keys(objetoPassadoPorParametro);
-  createMenu.order = (listaDepedidos) => {Object.assign(consumption, listaDepedidos)};
-
-/*  createMenu.pay = soma(Object.values(consumption).reduce()) */
-
-/* }; 
-console.log(createMenu({}));
-module.exports = createMenu; */
-
-/* createMenu.order = [];
- let busca = { fetchMenu: () => objetoPassadoPorParametro };
- for (let pedido in busca) {
-   for (let item in menu) {
-   if (pedido === item ) {
-    createMenu.order.push(pedido);
-   }
-  }
-  } */
+  let objCreatMenu = {
+ menu,
+ fetchMenu: () => objetoPassadoPorParametro,
+ consumption: [],
+ order: () => {},
+ pay: () => {},
+};
+return objCreatMenu;
+}; 
+console.log(createMenu({
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drinks: { agua: 3.90, cerveja: 6.90 },
+}));
+module.exports = createMenu;
