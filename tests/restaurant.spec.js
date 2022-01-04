@@ -125,6 +125,17 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
 
   expect (objFetchMenu).toEqual({ food: {}, drink: {} });
   })
+
+  it (`TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'`, () => {
+    const objetoRetornado = createMenu;
+    const objetoQualquer = {
+      food: { coxinha: 3.9, sopa: 9.9 },
+      drink: { agua: 3.9, cerveja: 6.9 },
+    };
+    const objFetchMenu = objetoRetornado(objetoQualquer).fetchMenu()
+    
+    expect (objFetchMenu).toEqual(objetoQualquer);
+  })
   it (' TESTE 4: Verifique se `objetoRetornado.consumption`, após a criação do menu, retorna um array vazio.', () => {
 let objetoCreateMenu;
 const objetoRetornado = createMenu(objetoCreateMenu);
@@ -139,5 +150,7 @@ expect(objetoRetornado.consumption).toStrictEqual([]);
     const objetoRetornado = createMenu(objetoQualquer);
     expect (objetoRetornado.order('coxinha')).toBe(objetoRetornado.consumption['coxinha'])
   });
+
+
   
 });
