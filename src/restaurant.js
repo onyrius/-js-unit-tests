@@ -91,50 +91,28 @@
 let foods = menu.food;
 let drinks = menu.drink;
 let itensMenu = {}; */
-
-const createMenu = (objetoPassadoPorParametro) => { 
-  const menu = {
-    food: { coxinha: 3.9, sopa: 9.9 },
-    drink: { agua: 3.9, cerveja: 6.9 },
-  };
-   
-   let foods = menu.food;
-   let drinks = menu.drink;
-   let itensMenu = {};
-   Object.assign(itensMenu, foods, drinks);
-
- let objCreatMenu = {
- menu,
- fetchMenu: () => objetoPassadoPorParametro,
- consumption: [],
- order: (objQualquer) => { 
-   for (let itemDoPedido of objQualquer) {
-     if (Object.keys(itemDoPedido) === Object.keys(itensMenu)) { 
-       objCreatMenu.consumption.push(Object.keys(itemDoPedido)); 
-     }
-  } 
-},
- pay: () => {},
+const menuTest = {
+  food: { coxinha: 3.9, sopa: 9.9 },
+  drink: { agua: 3.9, cerveja: 6.9 },
 };
+const createMenu = (objetoPassadoPorParametro) => { 
+  let foods = objetoPassadoPorParametro.food;
+  let drinks = objetoPassadoPorParametro.drink;
+  let itensMenu = {};
+  let totalMenu = Object.assign(itensMenu, foods, drinks);
+  
+  let objCreatMenu = {
+   
+      fetchMenu: () => objetoPassadoPorParametro,
+      
+      order: (itemDoPedido) => objCreatMenu.consumption.push(itemDoPedido),
+
+      consumption: [],
+      
+      pay: () => objCreatMenu.consumption.reduce((somaPay, item) => somaPay + totalMenu[item], 0),
+  };
 
 return objCreatMenu;
 }; 
-
-//------------------------------------------------------------------------------------------
-
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
-// adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
-// DICA: para criar isso, você pode: 
-// - Definir a função `createMenu()`
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
-// - E, depois, definir a função que será atribuída a `order`.
-// ```
-// const restaurant = {}
-//
-// const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
-//
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
-// // Essa função deve ser associada à chave `order` de `restaurant`
-// ```
 
 module.exports = createMenu;

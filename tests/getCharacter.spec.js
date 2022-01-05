@@ -74,17 +74,16 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   })
 
   it ('Verifica se os parâmetros não são Case Sensitive.', () => {
-   if (getCharacter('aString')){
-    let stringverying = 'aString'.toLowerCase;
+    getCharacter('aString')
+    let stringverying = 'aString'.toLowerCase();
     expect (stringverying).toBe('astring');
-   }
+   
   })
 
   it ('Verifica se ao passar um nome que não está na tabela, a função retorna undefined.', () => {
-    let parameter;
-    getCharacter(parameter) 
-    if (parameter !== `Arya` || parameter !== `Brienne` || parameter !== `Melissandre`) {
-      expect (getCharacter(parameter)).toBeUndefined() 
-    }
+    
+    getCharacter('parameter') 
+    expect (getCharacter('parameter')).toBeUndefined() 
+    
   })
 });
