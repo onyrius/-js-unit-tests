@@ -1,6 +1,6 @@
 # ![Jest](https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg)  JS Unit Tests Project ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white) 
  
-
+<p>Neste bloco, tive meu primeiro contato com testes. Foi onde a programação fez mais sentido! Pude pensar o código de maneira reversa e foi pensando na solução, no que era esperado da aplicação, pude entender melhor os conceitos de HOF's e qual a melhor para eu utilizar para resolver determinado problema. </p>
 
 
 ## Habilidades
